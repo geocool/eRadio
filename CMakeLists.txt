@@ -1,5 +1,5 @@
 
-project (eradio)
+project (eradio-lite)
 cmake_minimum_required (VERSION 2.6)
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
@@ -8,21 +8,21 @@ add_definitions("-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\"")
 add_definitions("-w")
 
 set (HOMEDIR $ENV{HOME})
-set (HOME_DATADIR ${HOMEDIR}/.local/share/eradio)
+set (HOME_DATADIR ${HOMEDIR}/.local/share/eradio-lite)
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
-set (PKGDATADIR "${DATADIR}/eradio")
+set (PKGDATADIR "${DATADIR}/eradio-lite")
 set (PKG_DATADIR ${PKGDATADIR})
 
-set (EXEC_NAME "com.github.dreamdevel.eradio")
-set (RELEASE_NAME "eRadio")
-set (VERSION "2.0.1")
+set (EXEC_NAME "eradio-lite")
+set (RELEASE_NAME "eRadio-Lite")
+set (VERSION "1.0.0")
 
 set (CONFIG_FILE ${CMAKE_CURRENT_SOURCE_DIR}/src/config.vala)
 set (CONFIG_FILE_REL src/config.vala)
 configure_file (${CMAKE_CURRENT_SOURCE_DIR}/src/config.vala.cmake ${CONFIG_FILE})
 
 include (GSettings)
-add_schema ("schemas/com.dreamdevel.eradio.gschema.xml")
+add_schema ("schemas/eradio-lite.gschema.xml")
 
 find_package(PkgConfig)
 
@@ -120,24 +120,24 @@ add_subdirectory (po)
 
 add_executable(${EXEC_NAME} ${VALA_C})
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.dreamdevel.eradio.desktop DESTINATION ${DATADIR}/applications/)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.dreamdevel.eradio.appdata.xml DESTINATION ${DATADIR}/metainfo/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/eradio-lite.desktop DESTINATION ${DATADIR}/applications/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/eradio-lite.appdata.xml DESTINATION ${DATADIR}/metainfo/)
 
 set(SYSTEM_DEFAULT_THEME ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor)
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/discoverBig.png DESTINATION ${PKGDATADIR})
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/com.github.dreamdevel.eradio.png DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/24x24/apps/com.github.dreamdevel.eradio.png DESTINATION ${SYSTEM_DEFAULT_THEME}/24x24/apps)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/32x32/apps/com.github.dreamdevel.eradio.png DESTINATION ${SYSTEM_DEFAULT_THEME}/32x32/apps)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/48x48/apps/com.github.dreamdevel.eradio.png DESTINATION ${SYSTEM_DEFAULT_THEME}/48x48/apps)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/128x128/apps/com.github.dreamdevel.eradio.png DESTINATION ${SYSTEM_DEFAULT_THEME}/128x128/apps)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/256x256/apps/com.github.dreamdevel.eradio.png DESTINATION ${SYSTEM_DEFAULT_THEME}/256x256/apps)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/512x512/apps/com.github.dreamdevel.eradio.png DESTINATION ${SYSTEM_DEFAULT_THEME}/512x512/apps)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/eradio-lite.png DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/24x24/apps/eradio-lite.png DESTINATION ${SYSTEM_DEFAULT_THEME}/24x24/apps)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/32x32/apps/eradio-lite.png DESTINATION ${SYSTEM_DEFAULT_THEME}/32x32/apps)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/48x48/apps/eradio-lite.png DESTINATION ${SYSTEM_DEFAULT_THEME}/48x48/apps)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/128x128/apps/eradio-lite.png DESTINATION ${SYSTEM_DEFAULT_THEME}/128x128/apps)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/256x256/apps/eradio-lite.png DESTINATION ${SYSTEM_DEFAULT_THEME}/256x256/apps)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/512x512/apps/eradio-lite.png DESTINATION ${SYSTEM_DEFAULT_THEME}/512x512/apps)
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/eradio-all-stations.svg DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/eradio-favorites.svg DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/eradio-genre.svg DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/eradio-discover.svg DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/eradio-lite-all-stations.svg DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/eradio-lite-favorites.svg DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/eradio-lite-genre.svg DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/eradio-lite-discover.svg DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)
 
 install(CODE "execute_process(COMMAND \"gtk-update-icon-cache\" \"-f\" \"/usr/share/icons/hicolor/\")")
-install(CODE "execute_process(COMMAND \"xdg-mime\" \"default\" \"com.github.dreamdevel.eradio.desktop\" \"x-scheme-handler/webradio\")")
+install(CODE "execute_process(COMMAND \"xdg-mime\" \"default\" \"eradio-lite.desktop\" \"x-scheme-handler/webradio\")")

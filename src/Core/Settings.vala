@@ -23,20 +23,20 @@ namespace Radio.Core.Settings {
         public int title_column_width {get;set;}
         public int genre_column_width {get;set;}
         public int sidebar_width {get;set;}
-        
-        
+
+
         public SavedState () {
-            base("com.dreamdevel.eradio.saved-state");
+            base("eradio-lite.saved-state");
         }
     }
-    
+
     public class Main : Granite.Services.Settings {
         public double stream_timeout {get;set;}
-        
-        
+
+
         public Main () {
-            base("com.dreamdevel.eradio.settings");
+            base("eradio-lite.settings");
         }
     }
-    
+
 }

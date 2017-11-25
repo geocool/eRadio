@@ -23,7 +23,7 @@ public class Radio.Views.WelcomeView : Granite.Widgets.Welcome {
 
 
     public WelcomeView () {
-    	base ("eRadio",_("Add a station to begin listening"));
+    	base ("eRadio-Lite",_("Add a station to begin listening"));
         build_interface ();
     }
 

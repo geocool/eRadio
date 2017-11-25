@@ -1,4 +1,4 @@
-Source: com.github.dreamdevel.eradio
+Source: eradio-lite
 Section: sound
 Priority: extra
 Maintainer: George Sofianos <georgesofianosgr@gmail.com>
@@ -17,11 +17,10 @@ Build-Depends: cmake (>= 2.8),
                libsqlheavy-dev
 Standards-Version: 3.9.3
 
-Package: com.github.dreamdevel.eradio
+Package: eradio-lite
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, gstreamer1.0-plugins-good, gstreamer1.0-plugins-ugly, gstreamer1.0-plugins-bad
-Description: A minimalist and powerful radio player
- eRadio is a radio player designed for elementary OS.
+Description: A minimalist,lite and powerful radio player
  .
  Features:
   - Supports many stream types ( based on gstreamer plugins )

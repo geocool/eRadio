@@ -43,7 +43,7 @@ public class Radio.Windows.MainWindow : Gtk.Window {
         this.set_default_size(saved_state.window_width,saved_state.window_height);
         this.set_application (Radio.App.instance);
         this.set_position (Gtk.WindowPosition.CENTER);
-        this.icon_name = "eRadio";
+        this.icon_name = "eradio-lite";
         this.resizable = true;
     }
 
@@ -54,7 +54,8 @@ public class Radio.Windows.MainWindow : Gtk.Window {
     }
 
     private void append_child_widgets () {
-        this.set_titlebar (headerbar);
+        //this.set_titlebar (headerbar);
+        main_box.pack_start(headerbar);
         main_box.pack_start (view_stack);
         this.add(main_box);
     }

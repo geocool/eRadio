@@ -49,14 +49,14 @@ class Radio.App : Granite.Application {
         build_version = Build.VERSION;
         build_version_info = Build.VERSION_INFO;
 
-        program_name = "eRadio";
-        exec_name = "com.github.dreamdevel.eradio";
+        program_name = "eRadio-Lite";
+        exec_name = "eradio-lite";
 
         app_copyright = "2014-2017";
-        application_id = "com.github.dreamdevel.eradio";
-        app_icon = "com.github.dreamdevel.eradio";
-        app_launcher = "com.github.dreamdevel.eradio.desktop";
-        app_years = "2014 - 2017";
+        application_id = "eradio-lite";
+        app_icon = "eradio-lite";
+        app_launcher = "eradio-lite.desktop";
+        app_years = "2017";
 
         main_url = "http://eradio.dreamdevel.com";
         bug_url = "https://github.com/DreamDevel/eRadio/issues";
@@ -94,14 +94,14 @@ class Radio.App : Granite.Application {
         settings = new Radio.Core.Settings.Main();
         player = new Radio.Core.Player ();
         player_helper = new Radio.Core.PlayerHelper ();
-        mpris = new Radio.Core.MPRIS ();
-        notifier = new Radio.Core.Notifier ();
+        //mpris = new Radio.Core.MPRIS ();
+        //notifier = new Radio.Core.Notifier ();
         package_manager = new Radio.Core.PackageManager ();
 
         initialize_database ();
-        Radio.MediaKeyListener.instance.init ();
-        mpris.initialize ();
-        Notify.init (this.program_name);
+        //Radio.MediaKeyListener.instance.init ();
+        //mpris.initialize ();
+        //Notify.init (this.program_name);
     }
 
     private void create_user_interface () {
@@ -125,10 +125,10 @@ class Radio.App : Granite.Application {
     private void initialize_database () {
 
         var home_dir = File.new_for_path (Environment.get_home_dir ());
-        var radio_dir = home_dir.get_child(".local").get_child("share").get_child("eradio");
+        var radio_dir = home_dir.get_child(".local").get_child("share").get_child("eradio-lite");
         var db_file = radio_dir.get_child("stationsv2.db");
 
-        // Create ~/.local/share/eradio path
+        // Create ~/.local/share/eradio-lite path
         if (! radio_dir.query_exists ()) {
             try {
                 radio_dir.make_directory_with_parents();

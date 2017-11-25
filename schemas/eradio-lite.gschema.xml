@@ -1,5 +1,5 @@
 <schemalist>
-        <schema id="com.dreamdevel.eradio.settings" path="/com/dreamdevel/eradio/settings/">
+        <schema id="eradio-lite.settings" path="/com/dreamdevel/eradio-lite/settings/">
         <key name="stream-timeout" type="d">
             <default>1.4</default>
             <summary>Stream Timeout</summary>
@@ -9,7 +9,7 @@
             </description>
         </key>
     </schema>
-    <schema id="com.dreamdevel.eradio.saved-state" path="/com/dreamdevel/eradio/saved-state/">
+    <schema id="eradio-lite.saved-state" path="/com/dreamdevel/eradio-lite/saved-state/">
         <key name="title-column-width" type="i">
             <default>190</default>
             <summary>Title column width</summary>
@@ -41,7 +41,7 @@
                 The height of the window
             </description>
         </key>
-        
+
         <key name="sidebar-width" type="i">
             <default>160</default>
             <summary>Sidebar Width</summary>

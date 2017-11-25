@@ -20,7 +20,7 @@
 
 using Radio;
 
-public class Radio.Widgets.HeaderBar : Gtk.HeaderBar {
+public class Radio.Widgets.HeaderBar : Gtk.Toolbar {
 
     private Gtk.ToolButton  play_button;
     private Gtk.ToolButton  previous_button;
@@ -43,7 +43,7 @@ public class Radio.Widgets.HeaderBar : Gtk.HeaderBar {
     }
 
     private void initialize () {
-        show_close_button = true;
+        //show_close_button = true;
     }
 
     private void build_interface () {
@@ -93,11 +93,11 @@ public class Radio.Widgets.HeaderBar : Gtk.HeaderBar {
     }
 
     private void append_headerbar_items () {
-        pack_start (previous_button);
-        pack_start (play_button);
-        pack_start (next_button);
-        pack_end (application_menu);
-        set_custom_title (title_box);
+        insert (previous_button,-1);
+        insert (play_button,-1);
+        insert (next_button,-1);
+        //insert(title_box,-1);
+        //insert (application_menu,-1);
     }
 
     private void connect_handlers_to_internal_signals () {
